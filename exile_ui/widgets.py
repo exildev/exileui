@@ -10,7 +10,6 @@ except:
 # endtry
 
 
-
 class DatePickerWidget(forms.DateInput):
 
     class Media:
