@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+include README.md
+recursive-include exileui/static *
+recursive-include exileui/templates *
