@@ -85,15 +85,28 @@ except:
 
 class PiscixAdminSite(AdminSite):
     # pass
+
     # Text to put at the end of each page's <title>.
-    site_title = settings.EXILE_UI['site_title']
+    try:
+        site_title = settings.EXILE_UI['site_title']
+    except:
+        site_title = 'Exile UI'
+    # endtry
 
     # Text to put in each page's <h1>.
-    site_header = settings.EXILE_UI['site_header']
+    try:
+        site_header = settings.EXILE_UI['site_header']
+    except:
+        site_header = 'site_header'
+    # endtry
 
     # Text to put at the top of the admin index page.
-    index_title = settings.EXILE_UI['index_title']
-    #
+    try:
+        index_title = settings.EXILE_UI['index_title']
+    except:
+        index_title = 'index_title'
+    # endtry
+
     # Path to a custom template that will be used by the admin site app
     # index view.
     # login_form = None
@@ -140,8 +153,7 @@ password_change_done_old = auth_views.password_change_done
 
 @method_decorator(csrf_protect)
 def changelist_view(self, request, extra_context=None):
-    extra_context = dict(dict({'menu_list': self.admin_site.get_app_list(
-        request)}).items() + settings.EXILE_UI['media'].items())
+    extra_context = dict(dict({'menu_list': self.admin_site.get_app_list(request)}).items() + settings.EXILE_UI['media'].items())
     return changelist_view_old(self, request, extra_context)
 # end def
 

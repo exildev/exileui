@@ -8,12 +8,12 @@ Detailed documentation is in the "docs" directory.
 ## Quick start
 
 1. Add "exileui" to your INSTALLED_APPS setting like this::
-
+```python
     INSTALLED_APPS = [
-        ...
         'exileui',
+        ...
     ]
-
+```
 2. Include the exileui URLconf in your project urls.py like this::
 
     url(r'^exileui/', include('exileui.urls')),

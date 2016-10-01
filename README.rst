@@ -13,8 +13,8 @@ Quick start
 1. Add "exileui" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
-        ...
         'exileui',
+        ...
     ]
 
 2. Include the exileui URLconf in your project urls.py like this::
