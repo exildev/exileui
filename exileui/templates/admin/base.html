@@ -16,7 +16,7 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}" data-admin-utc-offset="{% now "Z" %}">
 <script src="http://malsup.github.com/jquery.form.js"></script>
 <script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
-<script type="text/javascript">var a = 0; var b = ["| Piscix °", "| Piscix O", "| Piscix ° O", "| Piscix ° ."];setInterval(function () {$("html title").html(b[a]); a = (a >= 3?0:a=a+1)}, 1000)</script>
+<script type="text/javascript">var a = 0; var b = ["| {{site_title}} °", "| {{site_title}} O", "| {{site_title}} ° O", "| {{site_title}} ° ."];setInterval(function () {$("html title").html(b[a]); a = (a >= 3?0:a=a+1)}, 1000)</script>
 <!-- Container -->
 <div id="container">
     <header>

@@ -83,8 +83,7 @@ except:
 # endtry
 
 
-class PiscixAdminSite(AdminSite):
-    # pass
+class ExileuiAdminSite(AdminSite):
 
     # Text to put at the end of each page's <title>.
     try:
@@ -121,28 +120,29 @@ class PiscixAdminSite(AdminSite):
         aux = {'menu_list': self.get_app_list(request)}
         extra_context = dict(dict({'menu_list': self.get_app_list(
             request)}).items() + settings.EXILE_UI['media'].items())
-        return super(PiscixAdminSite, self).app_index(request, app_label, extra_context)
+        return super(ExileuiAdminSite, self).app_index(request, app_label, extra_context)
     # end def
 
     def index(self, request, extra_context=None):
         extra_context = settings.EXILE_UI['media']
         extra_context['site_title'] = settings.EXILE_UI['site_title']
-        return super(PiscixAdminSite, self).index(request, extra_context)
+        return super(ExileuiAdminSite, self).index(request, extra_context)
     # end def
 
     def login(self, request, extra_context=None):
         extra_context = {'img': settings.EXILE_UI['media']['logo'][
             'login'], 'title': settings.EXILE_UI['site_title']}
-        return super(PiscixAdminSite, self).login(request, extra_context)
+        return super(ExileuiAdminSite, self).login(request, extra_context)
     # end def
 
     def logout(self, request, extra_context=None):
         extra_context = extra_context = settings.EXILE_UI['media']
-        return super(PiscixAdminSite, self).logout(request, extra_context)
+        return super(ExileuiAdminSite, self).logout(request, extra_context)
     # end def
 
 # end class
 
+exileui = ExileuiAdminSite()
 changelist_view_old = admin.ModelAdmin.changelist_view
 render_change_form_old = admin.ModelAdmin.render_change_form
 render_delete_form_old = admin.ModelAdmin.render_delete_form
@@ -206,6 +206,14 @@ except:
     pass
 # endtry
 
+oldregister = admin.site.register
+
+
+def newregister(model_or_iterable, admin_class=None, **options):
+    exileui.register(model_or_iterable, admin_class, **options)
+# end def
+
+admin.site.register = newregister
 admin.ModelAdmin.changelist_view = changelist_view
 admin.ModelAdmin.render_change_form = render_change_form
 admin.ModelAdmin.render_delete_form = render_delete_form
@@ -214,6 +222,3 @@ auth_views.password_change = password_change
 auth_views.password_change_done = password_change_done
 admin.ModelAdmin.list_per_page = 10
 admin.ModelAdmin.change_list_template = 'admin/change_list.html'
-admin_site = PiscixAdminSite()
-admin_site.login
-admin_site._registry = admin.site._registry

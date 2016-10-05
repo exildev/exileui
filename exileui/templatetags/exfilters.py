@@ -1,7 +1,6 @@
 from django.template import Library
 from django.conf import settings
 import json as parse_json
-from exileui.admin import admin_site
 import operator
 try:
     from exileui.admin import ExTabular, ExStacked
