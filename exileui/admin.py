@@ -109,7 +109,14 @@ class ExileuiAdminSite(AdminSite):
     # Path to a custom template that will be used by the admin site app
     # index view.
     # login_form = None
-    index_template = 'admin/dashboard.html'
+
+    try:
+        index_template = settings.EXILE_UI['dash_template']
+    except Exception as e:
+        print e
+        index_template = 'admin/dash/dashboard.html'
+    # end try
+
     app_index_template = 'admin/app_index.html'
     # login_template = None
     # logout_template = None
@@ -205,8 +212,6 @@ try:
 except:
     pass
 # endtry
-
-oldregister = admin.site.register
 
 
 def newregister(model_or_iterable, admin_class=None, **options):

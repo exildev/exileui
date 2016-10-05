@@ -1,0 +1,95 @@
+{% load %}
+{% load i18n admin_static exfilters %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-co" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{site_title}}{% endblock %}</title>
+    {% include "admin/script.html" %}
+    <!--Import Google Icon Font-->
+    <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'admin/css/third/materialize.css'%}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static 'admin/css/fonts.css'%}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        *{
+            font-size: 16px;
+            font-family: "PtSans", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="{% static 'admin/js/third/materialize.js'%}"></script>
+
+    <div class="navbar-fixed">
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a class="light-blue-text" href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a></li>
+            <li class="divider"></li>
+            <li><a class="blue-text" href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper light-blue darken-4">
+                <a href="{% url 'admin:index' %}" class="brand-logo">
+                    <span class="nav-wrapper" style="float: left; display: block; background-image: url('{{logo.dashboard}}');width:250px;height:65px;">
+
+                    </span><span style="font-size: 25px;">{{title}}</span>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <!-- Dropdown Trigger -->
+                    <li>
+                        <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                            <i class="micon right">settings</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card-content">
+                    <div class="card-panel light-blue ">
+                        <h1 class="white-text">{{title}}</h1>
+                    </div>
+                    <!-- carticas -->
+                    <div class="row">
+                        <div class="col s12">
+                            {% if app_list %}
+                                {% for app in app_list %}
+                                    {% if app.has_module_perms %}
+                                    <div class="col s6 m4 l3">
+                                        <div class="card hoverable">
+                                            <div class="card-content center-align">
+                                                <span class="card-title">{% if icons|exsub:app.app_label|exsub:'icon' %}<i class="large micon tiny">{{icons|exsub:app.app_label|exsub:'icon'}}</i>{% endif %}</span>
+                                                <!-- <p class="truncate ">Lorem ipsum dolor sit amet.</p> -->
+                                            </div>
+                                            <div class="card-action  waves-effect waves-indigo light-blue darken-3 cuadrito ">
+                                                <a class="white-text" href="{{app.app_url}}">{{app.name}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                <p>{% trans "You don't have permission to edit anything." %}</p>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <!-- final de las carticas -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -63,6 +63,11 @@ def ex_applist_arr_add(arr, group, name, url, icon):
 # end def
 
 
+def arr_cond(arr, find, cb):
+    pass
+# end def
+
+
 def ex_applist_add(arr, group, model, app_name):
     icons = settings.EXILE_UI['media']['icons']
     icon = None
