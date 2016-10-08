@@ -47,7 +47,7 @@ def add_ui_context(view):
         response = view(self, request, *args, **kwargs)
         if isinstance(response, TemplateResponse):
             context = {
-                'menu_list': admin_site.get_app_list(request)
+                'menu_list': exileui.get_app_list(request)
             }
             response.context_data = dict(response.context_data.items() + settings.EXILE_UI['media'].items())
             response.context_data = dict(response.context_data.items() + context.items())

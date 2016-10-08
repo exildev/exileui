@@ -48,13 +48,13 @@ body {
     border: none;
     border-radius: 2px;
     padding: 7px;
-    background: #F50057;
+    background: #00B0FF;
     color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 a {
     text-decoration: none;
-    color: #F50057;
+    color: #00B0FF;
 }
 .submit-row input[type="submit"]:focus {
     outline: none;

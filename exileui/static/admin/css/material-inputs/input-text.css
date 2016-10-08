@@ -10,7 +10,7 @@
     display: block;
     width: 300px;
     border: none;
-    border-bottom: 1px solid #263238;
+    border-bottom: 1px solid #00695C;
 }
 .group input:focus {
     outline: none;
@@ -23,7 +23,7 @@
 .group input:focus~ label, .group input:valid~ label, .group input.valid~ label {
     top: -20px;
     font-size: 14px;
-    color: #263238;
+    color: #00695C;
 }
 
 .group input:focus~ .highlight {
@@ -55,7 +55,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #263238;
+    background: #00695C;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -79,7 +79,7 @@
 
 @-webkit-keyframes inputHighlighter {
     from {
-        background: #263238;
+        background: #00695C;
     }
     to {
         width: 0;
@@ -88,7 +88,7 @@
 }
 @keyframes inputHighlighter {
     from {
-        background: #263238;
+        background: #00695C;
     }
     to {
         width: 0;
