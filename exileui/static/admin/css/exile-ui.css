@@ -143,6 +143,7 @@ header, section {
 }
 section {
     height: calc(100% - 142px);
+    overflow-y: auto;
 }
 .exflag p, .exflag> a, .exflag> h2, .exflag > form > section {
     padding: 14px;
