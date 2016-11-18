@@ -1,6 +1,13 @@
 {% load static i18n nested_admin admin_urls exfilters %}
 {% with inline_admin_formset.formset.is_nested as is_nested %}
-<section class="assistant box"  data-assistant="{{inline_admin_formset.formset.prefix}}">
+<script type="text/javascript">
+    (() => {
+        document.addEventListener('DOMContentLoaded'. evn => {
+            console.log('staked');
+        });
+    })();
+</script>
+<section class="assistant box noc"  data-assistant="{{inline_admin_formset.formset.prefix}}">
 {% if not migas|exgetlast == inline_admin_formset.opts.verbose_name_plural %}
     {% extest migas name=inline_admin_formset.opts.verbose_name_plural link=inline_admin_formset.formset.prefix as var %}
 {% endif %}
@@ -68,6 +75,7 @@
                   {% for fieldset in inline_admin_form %}
                       {% include inline_admin_formset.opts.fieldset_template %}
                   {% endfor %}
+                    HOLA MUNDO
                   {% if inline_admin_form.form.inlines %}
                   <div class="assistant-btn">
                       {% for nested in inline_admin_form.form.inlines %}

@@ -66,8 +66,40 @@
 </div>
 </section>
 {% block after_field_sets %}{% endblock %}
-
 {% block after_related_objects %}{% endblock %}
+{% block inline_tabs %}
+<style media="screen">
+    .menu_tabs{
+        width: 100%;
+        background: black;
+    }
+    .menu_tabs > ul{
+        padding: 0;
+        margin: 0;
+    }
+    .menu_tabs > ul > li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 16px;
+        color: white
+    }
+    input[type=radio][name=labels]:checked ~ label{
+        background: red;
+    }
+</style>
+<div class="menu_tabs">
+    <ul>
+        {% for inline_admin_formset in inline_admin_formsets %}
+            {% if inline_admin_formset.opts.template == 'admin/inlines/stackedTab.html'%}
+            <li>
+                <!-- <input type="radio" name="labels" id="tab-{{inline_admin_formset.formset.prefix}}"> -->
+                <label for="tab-{{inline_admin_formset.formset.prefix}}">{% if inline_admin_formset.opts.title %}{{ inline_admin_formset.opts.title }}{% else %}{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}{% endif %}</label>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock%}
 {% block inline_field_sets %}
     {% for inline_admin_formset in inline_admin_formsets %}
         {% extest as var %}
@@ -76,14 +108,10 @@
         {% else %}
             {% extest var name=original|truncatewords:"18" link='form' as var %}
         {% endif %}
-        {% include inline_admin_formset.opts.template with father='form' migas=var %}
+        {% include inline_admin_formset.opts.template with father='form' migas=var sl=forloop.first %}
     {% endfor %}
 {% endblock %}
-
-
-
 {% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
-
 {% block admin_change_form_document_ready %}
     <script type="text/javascript">
         (function($) {

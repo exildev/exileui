@@ -73,6 +73,14 @@ except:
 # endtry
 
 try:
+    class ExTab(nested_admin.NestedStackedInline):
+        template = 'admin/inlines/stackedTab.html'
+    # end def
+except:
+    pass
+# endtry
+
+try:
     class DateRangeEX(DateRangeFilter):
         def get_form(self, request):
             return DateRangeExForm(request, data=self.used_parameters, field_name=self.field_path)
