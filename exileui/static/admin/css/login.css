@@ -1,3 +1,4 @@
+@import "/exileui/colors.css";
 @import "fonts.css";
 @import "material-inputs/input-text.css";
 html, body {
@@ -48,13 +49,13 @@ body {
     border: none;
     border-radius: 2px;
     padding: 7px;
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 a {
     text-decoration: none;
-    color: #00B0FF;
+    color: var(--accent, #00B0FF);
 }
 .submit-row input[type="submit"]:focus {
     outline: none;

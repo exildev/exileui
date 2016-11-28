@@ -1,14 +1,15 @@
+@import "/exileui/colors.css";
 html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     background: red;
-    background: #00695C;
-    background: -webkit-radial-gradient(circle, #00695C, #fff 0%, #00695C 100%);
-    background: -o-radial-gradient(circle, #00695C, #fff 0%, #00695C 100%);
-    background: -moz-radial-gradient(circle, #00695C, #fff 0%, #00695C 100%);
-    background: radial-gradient(circle, #00695C, #fff 0%, #00695C 100%);
+    background: var(--primary, #00695C);
+    background: -webkit-radial-gradient(circle, var(--primary, #00695C), #fff 0%, var(--primary, #00695C) 100%);
+    background: -o-radial-gradient(circle, var(--primary, #00695C), #fff 0%, var(--primary, #00695C) 100%);
+    background: -moz-radial-gradient(circle, var(--primary, #00695C), #fff 0%, var(--primary, #00695C) 100%);
+    background: radial-gradient(circle, var(--primary, #00695C), #fff 0%, var(--primary, #00695C) 100%);
     color: #004F65;
     font-family: "PtSans", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
 }
@@ -30,7 +31,7 @@ a {
 a:hover {
     color: #fff;
     padding: 7px 7px 7px 28px;
-    background: #00695C;
+    background: var(--primary, #00695C);
 }
 a:hover .micon {
     color: #fff;

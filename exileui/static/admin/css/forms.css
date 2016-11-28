@@ -274,6 +274,7 @@ body.popup .submit-row {
     height: 15px;
     line-height: 15px;
     color: #fff;
+    margin-right: 4px;
 }
 
 .submit-row a.deletelink:focus,

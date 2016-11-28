@@ -1,0 +1,6 @@
+:root{
+    {% if accent %}--accent: {{accent}};{% endif %}
+    {% if accent_ligth %}--accent_ligth: {{accent_ligth}};{% endif %}
+    {% if primary%}--primary: {{primary}};{% endif %}
+    {% if secundary %}--secundary: {{secundary}};{% endif %}
+}

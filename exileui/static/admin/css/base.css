@@ -16,7 +16,7 @@ body {
 /* LINKS */
 
 a:link, a:visited {
-    color: #00B0FF;
+    color: var(--accent, #00B0FF);
     text-decoration: none;
 }
 a:focus, a:hover {
@@ -351,10 +351,10 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     margin-top: 0;
     outline: none;
     border: none;
-    border-bottom: 2px solid #26A69A;
+    border-bottom: 2px solid var(--secundary, #26A69A);
 }
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=number]:focus, textarea:focus, select:focus, .vTextField:focus {
-    border-color: #00695C;
+    border-color: var(--primary, #00695C);
 }
 select {
     height: 30px;
@@ -366,7 +366,7 @@ select[multiple] {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button, button {
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     padding: 10px 15px;
     margin: 7px 0;
     border: none;
@@ -423,7 +423,7 @@ a.button {
     font-weight: 400;
     font-size: 16px;
     text-align: left;
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
     color: #fff;
 }
 .module caption, .inline-group h2 {
@@ -528,7 +528,7 @@ div.system-message p.system-message-title {
 /* BREADCRUMBS */
 
 div.breadcrumbs {
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
     padding: 10px 40px;
     border: none;
     font-size: 17px;
@@ -594,7 +594,7 @@ a.deletelink:focus, a.deletelink:hover {
     display: block;
     float: left;
     padding: 7px;
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     font-weight: 400;
     font-size: 14px;
     text-transform: uppercase;
@@ -684,7 +684,7 @@ table#change-history tbody th {
     height: 40px;
     padding: 10px 40px;
     padding-left: 0;
-    background: #00695C;
+    background: var(--primary, #00695C);
     line-height: 40px;
     color: #ffc;
     overflow: hidden;
@@ -734,8 +734,8 @@ table#change-history tbody th {
 }
 #user-tools a:focus, #user-tools a:hover {
     text-decoration: none;
-    border-bottom-color: #26A69A;
-    color: #26A69A;
+    border-bottom-color: var(--secundary, #26A69A);
+    color: var(--secundary, #26A69A);
 }
 
 /* SIDEBAR */

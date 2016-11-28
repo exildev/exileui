@@ -24,7 +24,7 @@ body.popup {
     margin: 0;
 }
 .ex-card .head {
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
     color: #fff;
 }
 .ex-card .footer> * {
@@ -61,7 +61,7 @@ body.login #ex-main.ex-card {
     margin-top: inherit;
 }
 .module caption, .inline-group h2 {
-    background: #26A69A !important;
+    background: var(--secundary, #26A69A) !important;
     color: #fff !important;
 }
 .ex-date-filter ul {
@@ -112,7 +112,7 @@ aside> ul> li> a {
     color: #fff !important;
 }
 aside> ul> li.activate> a {
-    background: #00695C;
+    background: var(--primary, #00695C);
     color: #fff;
 }
 aside> ul> li> ul> li> a {
@@ -120,7 +120,7 @@ aside> ul> li> ul> li> a {
     transition: all .7s;
 }
 aside> ul> li> ul> li.activate> a, aside> ul> li> ul> li> a:hover {
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     color: #fff;
 }
 aside> ul> li> a, aside> ul> li> ul> li> a {
@@ -145,12 +145,14 @@ section {
     height: calc(100% - 142px);
     overflow-y: auto;
 }
-.exflag p, .exflag> a, .exflag> h2, .exflag > form > section {
+.exflag p, .exflag> a:not(.deletelink), .exflag> h2, .exflag > form > section,  {
     padding: 14px;
 }
+
+
 .ex-miga {
     height: 42px;
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
 }
 .ex-miga .left {
     width: 200px;
@@ -171,7 +173,7 @@ li.menu ul.close {
     display: none;
 }
 li.menu.activate, li.menu:hover {
-    background: #00695C;
+    background: var(--primary, #00695C);
     color: #fff;
 }
 li.menu span {
@@ -210,7 +212,7 @@ td, th {
 #changelist-filter {
     min-height: 58px;
     padding: 3px 14px;
-    background-color: #26A69A !important;
+    background-color: var(--secundary, #26A69A) !important;
     color: #fff !important;
 }
 #ex_collapse> label {
@@ -230,7 +232,7 @@ p.paginator {
 .ex-filters-bar {
     display: table;
     width: 100%;
-    background-color: #26A69A;
+    background-color: var(--secundary, #26A69A);
     text-align: left;
 }
 .ex-filters-bar .ex-filter {
@@ -255,7 +257,7 @@ p.paginator {
 .miga> ul {
     padding: 0;
     margin: 0;
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
     padding: 7px;
 }
 .miga> ul> li {
@@ -284,26 +286,26 @@ p.paginator {
 }
 .assistant-lk {
     display: inline-block;
-    background: #26A69A;
+    background: var(--secundary, #26A69A);
     padding: 7px;
     border-radius: 2px;
     color: #fff !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .assistant-lk:hover {
-    background: #00695C;
+    background: var(--primary, #00695C);
 }
 #user-tools {
     margin-top: 44px !important;
 }
 input[type="checkbox"], input[type="radio"] {
-    color: #26A69A;
+    color: var(--secundary, #26A69A);
 }
 #subdashboard .items ul {
     padding: 0;
     margin: 0;
     text-align: left;
-    color: #26A69A;
+    color: var(--secundary, #26A69A);
 }
 #subdashboard .items ul> li {
     list-style: none;
@@ -349,7 +351,7 @@ input[type="checkbox"], input[type="radio"] {
     padding: 2px 40px;
 }
 .search.ex-card i.micon {
-    color: #26A69A;
+    color: var(--secundary, #26A69A);
 }
 .search.ex-card input#subdashboard-search {
     border: none;
@@ -358,7 +360,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 .exbtn {
     display: inline-block;
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     padding: 10px 15px !important;
     margin: 7px 0;
     border: none;

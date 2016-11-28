@@ -72,7 +72,7 @@
     transition: all 0.7s;
 }
 .group ul> li:hover {
-    background: #00B0FF;
+    background: var(--accent, #00B0FF);
     color: #fff;
 }
 .group ul> li> input[type="radio"] {
@@ -98,7 +98,7 @@
 }
 .group .micon:hover {
     border-radius: 50%;
-    background-color: #00B0FF;
+    background-color: var(--accent, #00B0FF);
     color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
