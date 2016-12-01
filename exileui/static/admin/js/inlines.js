@@ -56,13 +56,13 @@
                 $this.filter(":last").after('<div class="' + options.addCssClass + '"><a href="#">' + options.addText + "</a></div>");
                 addButton = $this.filter(":last").next().find("a");
             }
-            console.log(addButton.get(0));
+
             addButton.click(function(e) {
                 e.preventDefault();
                 
                 var template = $("#" + options.prefix + "-empty");
                 var row = template.clone(true);
-                console.log("addButton", options.emptyCssClass,row.get(0));
+
                 row.removeClass(options.emptyCssClass)
                 row.removeClass("djn-" + options.emptyCssClass)
                 .addClass(options.formCssClass)
@@ -105,7 +105,7 @@
                     $(document).trigger('formset:removed', [row, options.prefix]);
                     // Update the TOTAL_FORMS form count.
                     var forms = $(".djn-inline-form." + options.formCssClass);
-                    console.log(options.formCssClass);
+
                     var initial = $("#id_" + options.prefix + "-INITIAL_FORMS").val();
                     $("#id_" + options.prefix + "-TOTAL_FORMS").val(new Number(initial) + forms.length);
                     // Show add button again once we drop below max
@@ -216,7 +216,7 @@
     // Stacked inlines ---------------------------------------------------------
     $.fn.stackedFormset = function(options) {
         var $rows = $(this);
-        console.log("sta");
+
         var updateInlineLabel = function(row) {
             $($rows.selector).find(".inline_label").each(function(i) {
                 var count = i + 1;
@@ -281,7 +281,7 @@
     };
 
     $(document).ready(function() {
-        console.log( $(".js-inline-admin-formset").length);
+
         $(".inline-group").each(function() {
             var data = $(this).data(),
                 inlineOptions = data.inlineFormset;
