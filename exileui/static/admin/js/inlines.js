@@ -62,6 +62,7 @@
                 var row = template.clone(true);
                 row.removeClass('djn-'+options.emptyCssClass);
                 row.removeClass(options.emptyCssClass)
+
                 .addClass(options.formCssClass)
                 .attr("id", options.prefix + "-" + nextIndex);
                 if (row.is("tr")) {
@@ -101,8 +102,11 @@
                     }
                     $(document).trigger('formset:removed', [row, options.prefix]);
                     // Update the TOTAL_FORMS form count.
-                    var forms = $("." + options.formCssClass);
-                    $("#id_" + options.prefix + "-TOTAL_FORMS").val(forms.length);
+
+                    var forms = $(".djn-inline-form." + options.formCssClass);
+                    console.log(options.formCssClass);
+                    var initial = $("#id_" + options.prefix + "-INITIAL_FORMS").val();
+                    $("#id_" + options.prefix + "-TOTAL_FORMS").val(new Number(initial) + forms.length);
                     // Show add button again once we drop below max
                     if ((maxForms.val() === '') || (maxForms.val() - forms.length) > 0) {
                         addButton.parent().show();
@@ -111,10 +115,10 @@
                     // so they remain in sequence:
                     var i, formCount;
                     var updateElementCallback = function() {
-                        updateElementIndex(this, options.prefix, i);
+                        updateElementIndex(this, options.prefix, new Number(initial) + i);
                     };
                     for (i = 0, formCount = forms.length; i < formCount; i++) {
-                        updateElementIndex($(forms).get(i), options.prefix, i);
+                        updateElementIndex($(forms).get(i), options.prefix, new Number(initial) + i);
                         $(forms.get(i)).find("*").each(updateElementCallback);
                     }
                 });

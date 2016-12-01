@@ -17,7 +17,9 @@
     data-inline-type="stacked"
     data-inline-formset="{{ inline_admin_formset.inline_formset_data }}"
     data-inline-model="{{ inline_admin_formset.inline_model_id }}">
-
+    <h2>
+        {% if inline_admin_formset.opts.title %}{{ inline_admin_formset.opts.title }}{% else %}{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}{% endif %}
+    </h2>
     <div class="miga">
         <ul>
             <li>
@@ -75,7 +77,6 @@
                   {% for fieldset in inline_admin_form %}
                       {% include inline_admin_formset.opts.fieldset_template %}
                   {% endfor %}
-                    HOLA MUNDO
                   {% if inline_admin_form.form.inlines %}
                   <div class="assistant-btn">
                       {% for nested in inline_admin_form.form.inlines %}
