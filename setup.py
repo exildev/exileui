@@ -5,10 +5,10 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
 
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
-# python setup.py sdist upload -r pypi
+
 setup(
     name='exileui',
-    version='0.1.9.6',
+    version='0.1.9.8',
     packages=find_packages(),
     include_package_data=True,
     license='GNU GENERAL PUBLIC LICENSE',
