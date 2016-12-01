@@ -351,7 +351,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     margin-top: 0;
     outline: none;
     border: none;
-    border-bottom: 2px solid var(--secundary, #26A69A);
+    border-bottom: 2px solid var(--secondary, #26A69A);
 }
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=number]:focus, textarea:focus, select:focus, .vTextField:focus {
     border-color: var(--primary, #00695C);
@@ -423,7 +423,7 @@ a.button {
     font-weight: 400;
     font-size: 16px;
     text-align: left;
-    background: var(--secundary, #26A69A);
+    background: var(--secondary, #26A69A);
     color: #fff;
 }
 .module caption, .inline-group h2 {
@@ -528,7 +528,7 @@ div.system-message p.system-message-title {
 /* BREADCRUMBS */
 
 div.breadcrumbs {
-    background: var(--secundary, #26A69A);
+    background: var(--secondary, #26A69A);
     padding: 10px 40px;
     border: none;
     font-size: 17px;
@@ -734,8 +734,8 @@ table#change-history tbody th {
 }
 #user-tools a:focus, #user-tools a:hover {
     text-decoration: none;
-    border-bottom-color: var(--secundary, #26A69A);
-    color: var(--secundary, #26A69A);
+    border-bottom-color: var(--secondary, #26A69A);
+    color: var(--secondary, #26A69A);
 }
 
 /* SIDEBAR */
