@@ -65,6 +65,14 @@ except:
 # endtry
 
 try:
+    class ExGraph(nested_admin.NestedStackedInline):
+        template = 'admin/inlines/graph.html'
+    # end def
+except:
+    pass
+# endtry
+
+try:
     class ExStacked(nested_admin.NestedStackedInline):
         template = 'admin/inlines/stacked.html'
     # end def

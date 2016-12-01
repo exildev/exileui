@@ -2,8 +2,7 @@
 {% with inline_admin_formset.formset.is_nested as is_nested %}
 {% with inline_admin_formset.opts as inline_opts %}
 {{inline_admin_formset.formset}}
-<div>
-<input type="radio" name="tabs" id="tab-{{inline_admin_formset.formset.prefix}}" {% if sl %}checked{% endif %}>
+<!--input type="radio" name="tabs" id="tab-{{inline_admin_formset.formset.prefix}}" {% if first %}checked{% endif %}-->
 <div class="inline-group tab group djn-group djn-stacked{% if is_nested %} djn-group-nested{% else %} djn-group-root{% endif %}"
     id="{{ inline_admin_formset.formset.prefix }}-group"
     data-inline-type="stacked"
@@ -77,12 +76,11 @@
 {% endwith %}{# ends with inline_admin_formset.opts as inline_opts #}
 
 {% endwith %}{# ends {% with inline_admin_formset.formset.is_nested as is_nested %} #}
-<style media="screen">
+<!--style media="screen">
     .inline-group.tab, input[type=radio][name=tabs]{
         display: none;
     }
     input[type=radio][name=tabs]:checked ~ .inline-group.tab{
         display: inherit;
     }
-</style>
-</div>
+</style-->
