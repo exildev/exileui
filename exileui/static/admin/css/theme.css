@@ -1,15 +1,19 @@
 .new-accent {
-    background: var(--accent, #00B0FF);
+    background-color: var(--accent, #00B0FF);
 }
 
 .new-accent-light {
-    background: var(--accent_light);
+    background-color: var(--accent_light);
 }
 
 .new-primary {
-    background: var(--primary, #00695C);
+    background-color: var(--primary, #00695C);
 }
 
 .new-secondary {
-    background: var(--secondary, #26A69A);
+    background-color: var(--secondary, #26A69A);
+}
+.card .card-action{
+    width: 100%;
+
 }
