@@ -1,15 +1,15 @@
 .new-accent {
-    color: var(--accent, #00B0FF);
+    background: var(--accent, #00B0FF);
 }
 
 .new-accent-light {
-    color: var(--accent_light);
+    background: var(--accent_light);
 }
 
 .new-primary {
-    color: var(--primary, #00695C);
+    background: var(--primary, #00695C);
 }
 
 .new-secondary {
-    color: var(--secondary, #26A69A);
+    background: var(--secondary, #26A69A);
 }
