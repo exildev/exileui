@@ -3,5 +3,5 @@
     {% if accent_light %}--accent_light: {{accent_light}};{% endif %}
     {% if primary%}--primary: {{primary}};{% endif %}
     {% if secondary %}--secondary: {{secondary}};{% endif %}
-    {% if font-color %}--font: {{font-color}};{% endif %}
+    {% if font_color %} --font-color: {{font_color}};{% endif %}
 }

@@ -15,7 +15,7 @@ def colors(request):
             'accent_light': theme.get('accent_light'),
             'primary': theme.get('primary'),
             'secondary': theme.get('secondary'),
-            'font-color': theme.get('font-color'),
+            'font-color': theme.get('font_color'),
         }, content_type='text/css')
     else:
         raise Http404
