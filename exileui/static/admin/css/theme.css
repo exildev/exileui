@@ -13,7 +13,11 @@
 .new-secondary {
     background-color: var(--secondary, #26A69A);
 }
+
+.font-color{
+   color: var(--font-color, #000);
+}
+
 .card .card-action{
     width: 100%;
-
 }
